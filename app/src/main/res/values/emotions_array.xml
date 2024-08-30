@@ -1,0 +1,11 @@
+<!-- res/values/strings.xml -->
+<resources>
+    <string-array name="emotions_array">
+        <item>Ego</item>
+        <item>Anger</item>
+        <item>Disgust</item>
+        <item>Fear</item>
+        <item>Joy</item>
+        <item>Sadness</item>
+    </string-array>
+</resources>

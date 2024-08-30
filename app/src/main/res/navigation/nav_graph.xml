@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/egoFragment">
+
+    <fragment
+        android:id="@+id/angerFragment"
+        android:name="com.kader.kekodchallenge1.ui.fragment.AngerFragment"
+        android:label="fragment_anger"
+        tools:layout="@layout/fragment_anger" />
+    <fragment
+        android:id="@+id/disgustFragment"
+        android:name="com.kader.kekodchallenge1.ui.fragment.DisgustFragment"
+        android:label="fragment_disgust"
+        tools:layout="@layout/fragment_disgust" />
+    <fragment
+        android:id="@+id/egoFragment"
+        android:name="com.kader.kekodchallenge1.ui.fragment.EgoFragment"
+        android:label="fragment_ego"
+        tools:layout="@layout/fragment_ego" />
+    <fragment
+        android:id="@+id/fearFragment"
+        android:name="com.kader.kekodchallenge1.ui.fragment.FearFragment"
+        android:label="fragment_fear"
+        tools:layout="@layout/fragment_fear" />
+    <fragment
+        android:id="@+id/joyFragment"
+        android:name="com.kader.kekodchallenge1.ui.fragment.JoyFragment"
+        android:label="fragment_joy"
+        tools:layout="@layout/fragment_joy" />
+    <fragment
+        android:id="@+id/sadnessFragment"
+        android:name="com.kader.kekodchallenge1.ui.fragment.SadnessFragment"
+        android:label="fragment_sadness"
+        tools:layout="@layout/fragment_sadness" />
+</navigation>

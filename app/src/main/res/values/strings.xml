@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">KekodChallenge1</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ego">EGO</string>
+    <string name="anger">Anger</string>
+    <string name="disgust">Disgust</string>
+    <string name="fear">Fear</string>
+    <string name="joy">Joy</string>
+    <string name="sadness">Sadness</string>
+</resources>
