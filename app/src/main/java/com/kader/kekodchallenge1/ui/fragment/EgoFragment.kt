@@ -51,11 +51,16 @@ class EgoFragment : BaseFragment<FragmentEgoBinding>() {
     }
 
     private fun setSwitchesEnabled(isEnabled: Boolean) {
-        binding.switchAnger.isEnabled = isEnabled
-        binding.switchDisgust.isEnabled = isEnabled
-        binding.switchFear.isEnabled = isEnabled
-        binding.switchSadness.isEnabled = isEnabled
-        binding.switchJoy.isEnabled = isEnabled
+        listOf(
+            binding.switchJoy,
+            binding.switchFear,
+            binding.switchAnger,
+            binding.switchDisgust,
+            binding.switchSadness
+        ).forEach { switch ->
+            switch.isEnabled = isEnabled
+            if (!isEnabled) switch.isChecked = false
+        }
     }
 
     override fun createViewBinding(
