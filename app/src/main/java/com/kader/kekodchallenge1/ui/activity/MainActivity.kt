@@ -35,13 +35,12 @@ class MainActivity : AppCompatActivity() {
         val menu = binding.bottomNavigation.menu
         menu.clear()
 
-        menu.add(0, R.id.egoFragment, 0, getString(R.string.ego)).setIcon(R.drawable.ic_ego_icon)
+        menu.add(0, R.id.egoFragment, 0, "Ego").setIcon(R.drawable.ic_ego_icon)
 
         val fragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment)
             ?.childFragmentManager
             ?.fragments
-            ?.firstOrNull { it is EgoFragment }
-                as? EgoFragment
+            ?.firstOrNull { it is EgoFragment } as? EgoFragment
 
         fragment?.let { egoFragment ->
             val switches = listOf(
@@ -52,22 +51,33 @@ class MainActivity : AppCompatActivity() {
                 R.id.sadnessFragment to egoFragment.binding.switchSadness
             )
 
-            addedSwitchIds.clear()
-            var switchCount = 0
-
             switches.forEach { (fragmentId, switch) ->
-                if (switch.isChecked && !addedSwitchIds.contains(fragmentId)) {
-                    if (switchCount < 4) {
-                        menu.add(0, fragmentId, switchCount + 1, switch.text)
-                            .setIcon(getIconForFragment(fragmentId))
+                if (switch.isChecked) {
+                    if (!addedSwitchIds.contains(fragmentId)) {
                         addedSwitchIds.add(fragmentId)
-                        switchCount++
-                    } else {
+                    }
+                } else {
+                    addedSwitchIds.remove(fragmentId)
+                }
+            }
+
+            addedSwitchIds.take(4).forEachIndexed { index, fragmentId ->
+                val switchPair = switches.firstOrNull { it.first == fragmentId }
+                if (switchPair != null) {
+                    val switch = switchPair.second
+                    menu.add(0, fragmentId, index + 1, switch.text)
+                        .setIconTintList(null)
+                        .setIcon(getIconForFragment(fragmentId))
+                }
+            }
+
+            if (addedSwitchIds.size > 4) {
+                switches.forEach { (fragmentId, switch) ->
+                    if (addedSwitchIds.indexOf(fragmentId) >= 4) {
                         switch.isChecked = false
-                        showWarning()
-                        return@forEach
                     }
                 }
+                showWarning()
             }
         }
 

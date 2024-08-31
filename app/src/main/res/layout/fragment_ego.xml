@@ -1,65 +1,80 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:background="@android:color/white"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <Switch
         android:id="@+id/switch_ego"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/switch_background"
         android:checked="true"
-        android:text="Ego" />
+        android:padding="10dp"
+        android:text="Ego"
+        android:textColor="@android:color/black"
+        android:thumb="@drawable/ic_ego_icon" />
 
     <Switch
         android:id="@+id/switch_anger"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/switch_ego"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/switch_background"
         android:enabled="false"
-        android:text="Anger" />
+        android:padding="10dp"
+        android:text="Anger"
+        android:textColor="@android:color/black"
+        android:thumb="@drawable/ic_angry_icon" />
 
     <Switch
         android:id="@+id/switch_disgust"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/switch_anger"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/switch_background"
         android:enabled="false"
-        android:text="Disgust" />
+        android:padding="10dp"
+        android:text="Disgust"
+        android:textColor="@android:color/black"
+        android:thumb="@drawable/ic_disgust_icon" />
 
     <Switch
         android:id="@+id/switch_fear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/switch_disgust"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/switch_background"
         android:enabled="false"
-        android:text="Fear" />
+        android:padding="10dp"
+        android:text="Fear"
+        android:textColor="@android:color/black"
+        android:thumb="@drawable/ic_fear_icon" />
 
     <Switch
         android:id="@+id/switch_joy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/switch_fear"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/switch_background"
         android:enabled="false"
-        android:text="Joy" />
+        android:padding="10dp"
+        android:text="Joy"
+        android:textColor="@android:color/black"
+        android:thumb="@drawable/ic_joy_icon" />
 
     <Switch
         android:id="@+id/switch_sadness"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/switch_joy"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:background="@drawable/switch_background"
         android:enabled="false"
-        android:text="Sadness" />
+        android:padding="10dp"
+        android:text="Sadness"
+        android:textColor="@android:color/black"
+        android:thumb="@drawable/ic_sad_icon" />
 
-</RelativeLayout>
+</LinearLayout>
