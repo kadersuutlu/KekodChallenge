@@ -51,23 +51,23 @@ class MainActivity : AppCompatActivity() {
                 R.id.sadnessFragment to egoFragment.binding.switchSadness
             )
 
+            val newSwitchIds = mutableListOf<Int>()
             switches.forEach { (fragmentId, switch) ->
                 if (switch.isChecked) {
                     if (!addedSwitchIds.contains(fragmentId)) {
                         addedSwitchIds.add(fragmentId)
                     }
+                    newSwitchIds.add(fragmentId)
                 } else {
                     addedSwitchIds.remove(fragmentId)
                 }
             }
 
-            addedSwitchIds.take(4).forEachIndexed { index, fragmentId ->
+            newSwitchIds.take(4).forEachIndexed { index, fragmentId ->
                 val switchPair = switches.firstOrNull { it.first == fragmentId }
-                if (switchPair != null) {
-                    val switch = switchPair.second
-                    menu.add(0, fragmentId, index + 1, switch.text)
-                        .setIconTintList(null)
-                        .setIcon(getIconForFragment(fragmentId))
+                switchPair?.let { (id, switch) ->
+                    menu.add(0, id, index + 1, switch.text)
+                        .setIcon(getIconForFragment(id))
                 }
             }
 
@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        binding.bottomNavigation.visibility = if (menu.size() > 1) View.VISIBLE else View.GONE
+        binding.bottomNavigation.visibility = if (menu.size() > 1 || menu.findItem(R.id.egoFragment) != null) View.VISIBLE else View.GONE
     }
 
     private fun showWarning() {
