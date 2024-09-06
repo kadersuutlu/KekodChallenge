@@ -1,4 +1,3 @@
-<!-- res/values/strings.xml -->
 <resources>
     <string-array name="emotions_array">
         <item>Ego</item>
