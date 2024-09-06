@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.KekodChallenge1" parent="Base.Theme.KekodChallenge1" />
+
+    <style name="CardViewStyle" parent="TextAppearance.AppCompat">
+        <item name="android:layout_margin">@dimen/smallMargin</item>
+        <item name="cardCornerRadius">@dimen/smallMargin</item>
+    </style>
+
 </resources>
