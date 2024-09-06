@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/egoFragment">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/angerFragment"
@@ -35,4 +35,12 @@
         android:name="com.kader.kekodchallenge1.ui.fragment.SadnessFragment"
         android:label="fragment_sadness"
         tools:layout="@layout/fragment_sadness" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_egoFragment"
+            app:destination="@id/egoFragment" />
+    </fragment>
 </navigation>
